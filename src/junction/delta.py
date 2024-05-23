@@ -328,7 +328,7 @@ class UpdatePage(PageAction):
             existing = query.results[0]
             # skip the first ancestor, it's the space home page
             current_ancestors = (
-                [x.title for x in existing.ancestors[1:]] if existing.ancestors else []
+                [x.title for x in existing.ancestors] if existing.ancestors else []
             )
             assert (
                 self.ancestor_titles == current_ancestors
